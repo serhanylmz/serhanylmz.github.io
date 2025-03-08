@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serhan Yilmaz</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -12,14 +13,23 @@
 
     <h1><a href="index.html">Serhan Yilmaz</a></h1>
 
-    <h3>
-        <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
-        | <a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer">linkedin</a>
-        | <a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer">github</a>
-        | <a href="media.html">media</a>
-        | <a href="misc.html">misc</a>
-        | <a href="mailto:srhnylmz14@gmail.com">email</a>
-    </h3>
+    <nav class="nav-container">
+        <div class="nav-section external">
+            <span class="nav-label">Connect:</span>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+            <a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+            <a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+            <a href="https://x.com/srhnylmz14" target="_blank" rel="noopener noreferrer" class="nav-link">X/Twitter</a>
+            <a href="mailto:srhnylmz14@gmail.com" class="nav-link">Email</a>
+        </div>
+        <div class="nav-section internal">
+            <span class="nav-label">Pages:</span>
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="media.html" class="nav-link">Media</a>
+            <a href="schedule.html" class="nav-link">Chat with Serhan</a>
+            <a href="misc.html" class="nav-link">Misc</a>
+        </div>
+    </nav>
 
     <br>
 
@@ -35,12 +45,39 @@
 
     <p>At Sabanci University, I founded and led <a href="https://kaisabanci.com/" target="_blank" rel="noopener noreferrer">kAi Sabanci</a>, the university's premier AI club, growing membership to over 600 students.</p>
 
-    <h2>Research Interests</h2>
-    <p>Multi-Agent Systems, Agentic AI Frameworks, Conversational AI. I'm particularly excited about developing compound AI systems and enhancing multi-agent collaboration frameworks.</p>
+    <section class="research-interests">
+        <h2>Research Interests</h2>
+        <p class="research-description">My research focuses on developing intelligent systems that can reason, collaborate, and adapt. I'm particularly interested in:</p>
+        <div class="interests-container">
+            <span class="interest-tag">Agentic AI</span>
+            <span class="interest-tag">Reasoning</span>
+            <span class="interest-tag">Test-Time Scaling</span>
+            <span class="interest-tag">Reliable AI</span>
+            <span class="interest-tag">Multi-Agent Systems</span>
+        </div>
+    </section>
+
+    <section class="chat-promo">
+        <div class="chat-promo-content">
+            <div class="chat-promo-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="chat-promo-text">
+                <h3>Chat with Serhan</h3>
+                <p>i've opened up some 30-minute slots for virtual hangouts. research ideas, cool projects, engineering problems, or just venting about that bug you can't fix - i'm down for whatever!</p>
+                <a href="schedule.html" class="promo-button">grab a slot <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
 
     <h2>News</h2>
 
     <table>
+		<tr>
+			<th>Jan 22, 2025</th>
+			<td>INCLUDE is accepted at ICLR 2025 as a Spotlight paper!</td>
+
+		</tr>
 
 		<tr>
 			<th>Dec 1, 2024</th>
@@ -102,14 +139,14 @@
 	<li>
 		<b>CASCADES: Compound AI Systems for Controlled And Diverse Question Generation</b><br>
 		<u>Serhan Yilmaz</u> and Kemal Oflazer<br>
-		<i>In preparation, expected 2024</i><br>
+		<i>In preparation, expected 2025</i><br>
 		<!-- Links will be added once available -->
 	</li>
 	
 	<li>
 		<b>INCLUDE: Evaluating Multilingual Language Understanding with Regional Knowledge</b><br>
 		Angelika Romanou, [...], <u>Serhan Yilmaz</u>, [...], Sara Hooker, Antoine Bosselut, et al.<br>
-		<i>Under review at ICLR 2025, 2024</i><br>
+		<i>ICLR 2025 (Spotlight), 2024</i><br>
 	
 		<a href="assets/include/paper.pdf">paper</a>
 		| <a href="https://arxiv.org/abs/2411.19799">arxiv</a>
