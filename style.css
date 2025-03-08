@@ -7,6 +7,12 @@ body {
 	max-width: 720px;
 	margin: auto;
 	padding: 1em;
+    position: relative;
+}
+
+/* When nav is open on mobile, prevent scrolling */
+body.nav-is-open {
+    overflow: hidden;
 }
 
 #profile_pic {
@@ -82,11 +88,79 @@ footer {
 }
 
 /* Navigation styles */
+.mobile-nav-container {
+    position: relative;
+    width: 100%;
+    margin: 1rem 0 2rem 0;
+}
+
+#mobile-nav-toggle {
+    display: none;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 128, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    z-index: 1001;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#mobile-nav-toggle:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 16px;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: green;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#mobile-nav-toggle.is-active {
+    background: rgba(0, 128, 0, 0.05);
+}
+
+#mobile-nav-toggle.is-active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+#mobile-nav-toggle.is-active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+#mobile-nav-toggle.is-active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 .nav-container {
     margin: 1rem 0 2rem 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-section {
@@ -130,6 +204,108 @@ footer {
     background-color: rgba(0, 128, 0, 0.12);
 }
 
+@media (max-width: 768px) {
+    #mobile-nav-toggle {
+        display: flex;
+    }
+    
+    .nav-container {
+        background-color: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    #profile_pic {
+        margin-top: 1rem;
+    }
+    
+    .nav-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 60px 20px 20px;
+        margin: 0;
+        transform: translateX(-100%);
+        opacity: 0;
+        pointer-events: none;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-container.nav-open {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+    .nav-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+    
+    .nav-section.external {
+        margin-bottom: 30px;
+    }
+    
+    .nav-section.internal {
+        padding-top: 30px;
+        border-top: 1px solid #eee;
+        flex-direction: column;
+    }
+    
+    .nav-label {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #333;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        display: block;
+        margin: 0 auto 5px;
+        background-color: rgba(0, 128, 0, 0.05);
+    }
+    
+    .nav-link:hover, .nav-link:focus {
+        background-color: rgba(0, 128, 0, 0.1);
+    }
+    
+    .nav-link.active {
+        background-color: rgba(0, 128, 0, 0.15);
+        font-weight: 600;
+    }
+    
+    /* Adjust body padding for mobile */
+    body {
+        padding-top: 60px;
+    }
+    
+    /* Ensure the mobile nav container doesn't add extra space */
+    .mobile-nav-container {
+        margin-top: 0;
+    }
+}
+
 @media (max-width: 600px) {
     .nav-container {
         gap: 1rem;
@@ -142,7 +318,7 @@ footer {
     }
     
     .nav-section.internal {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
     }
 }
