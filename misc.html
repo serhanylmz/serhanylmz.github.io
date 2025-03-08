@@ -4,7 +4,8 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<title>Serhan Yilmaz</title>
+	<title>serhan yilmaz | misc</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -12,24 +13,200 @@
 
 	<h1><a href="index.html">Serhan Yilmaz</a></h1>
 
-	<h3>
-	<a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
-	| <a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer">linkedin</a>
-	| <a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer">github</a>
-	| <a href="media.html">media</a>
-	| <a href="misc.html">misc</a>
-    | <a href="mailto:srhnylmz14@gmail.com">email</a>
-	</h3>
+	<nav class="nav-container">
+        <div class="nav-section external">
+            <span class="nav-label">Connect:</span>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+            <a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+            <a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+            <a href="https://x.com/srhnylmz14" target="_blank" rel="noopener noreferrer" class="nav-link">X/Twitter</a>
+            <a href="mailto:srhnylmz14@gmail.com" class="nav-link">Email</a>
+        </div>
+        <div class="nav-section internal">
+            <span class="nav-label">Pages:</span>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="media.html" class="nav-link">Media</a>
+            <a href="schedule.html" class="nav-link">Chat with Serhan</a>
+            <a href="misc.html" class="nav-link active">Misc</a>
+        </div>
+    </nav>
     
-	<h2>misc</h2>
+	<h2>miscellaneous</h2>
+	
+	<p>just some random stuff i'm into. recipes i like to make, tech fixes i've figured out, music i vibe with... you get the idea.</p>
 
-	<p>soon ready...i'm cookin' &#127859;</p>
-    <p>will soon add a guide for fixing old jetson cards, some personal favorites (music, places, food, subreddit?) and so on.</p>
+	<div class="misc-container">
+		<!-- Featured Item -->
+		<div class="featured-item">
+			<div class="featured-image">
+				<img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=2670&auto=format&fit=crop" alt="Mint Lemon Tea">
+			</div>
+			<div class="featured-content">
+				<h3 class="featured-title">mint lemon tea (nane limon çayı)</h3>
+				<p class="featured-description">
+					so this is something i make all the time during winter. it's a turkish classic that my mom taught me - super simple but hits the spot when you're feeling under the weather or just need something warm and soothing. threw together a little guide if you wanna try it yourself.
+				</p>
+				<a href="assets/nane_limon.pdf" target="_blank" rel="noopener noreferrer" class="featured-link">
+					<i class="fas fa-mug-hot"></i> check it out
+				</a>
+			</div>
+		</div>
 
+		<!-- Recipes Section -->
+		<div class="misc-section">
+			<h3>recipes & food</h3>
+			<div class="cards-container">
+				<div class="card">
+					<img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=2670&auto=format&fit=crop" class="card-image" alt="Mint Lemon Tea">
+					<div class="card-content">
+						<h4 class="card-title">mint lemon tea (nane limon çayı)</h4>
+						<p class="card-description">
+							my go-to turkish drink for cold days. super easy to make and really helps with sore throats. prepared a recipe guide, check it out.
+						</p>
+						<div class="card-tags">
+							<span class="card-tag">turkish</span>
+							<span class="card-tag">tea</span>
+							<span class="card-tag">winter vibes</span>
+						</div>
+						<a href="assets/nane_limon.pdf" target="_blank" rel="noopener noreferrer" class="card-link">check it out</a>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="assets/img/misc/perive.png" class="card-image" alt="Buryan Kebabi">
+					<div class="card-content">
+						<h4 class="card-title">büryan kebabı (perive)</h4>
+						<p class="card-description">
+							the absolute best kebab in the world from my hometown siirt. lamb slow-cooked in a pit oven until it's fall-off-the-bone tender. if you ever visit, tell brother mehmet you know me.
+						</p>
+						<div class="card-tags">
+							<span class="card-tag">siirt</span>
+							<span class="card-tag">kebab</span>
+							<span class="card-tag">hometown</span>
+						</div>
+						<a href="https://maps.app.goo.gl/e8xid8pxLosfcB31A" target="_blank" rel="noopener noreferrer" class="card-link">best spot</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Music Section -->
+		<div class="misc-section">
+			<h3>tunes</h3>
+			<div style="margin-bottom: 2rem;">
+				<p style="margin-bottom: 1rem; color: #555;">been really into argentinian rock lately. zoe, los abuelos de la nada, los rodriguez - just can't get enough of that sound. throw these on during late night coding and time just flies by.</p>
+				<iframe style="border-radius:12px; width: 100%; max-width: 660px; display: block; margin: 0 auto;" src="https://open.spotify.com/embed/playlist/3Ar5Zhlt542cL7nNgRc8E8?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+			</div>
+		</div>
+
+		<!-- Cool Spots / Photo Gallery Section -->
+		<div class="misc-section">
+			<h3>cool spots / my photos</h3>
+			<p style="margin-bottom: 1.5rem; color: #555;">some places i've been lucky enough to visit and capture. all photos taken by me.</p>
+			
+			<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/bosphorus.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Bosphorus, Istanbul">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">the bosphorus - where two continents meet.</p>
+					</div>
+				</div>
+				
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/botan.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Botan River, Siirt">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">the mighty botan valley near my hometown.</p>
+					</div>
+				</div>
+				
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/sacre-coeur.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Sacré-Cœur, Paris">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">sacré-cœur basilica in paris - climbed all those steps for this view.</p>
+					</div>
+				</div>
+				
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/bern.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Bern, Switzerland">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">the charming scenery of bern - switzerland's hidden gem.</p>
+					</div>
+				</div>
+				
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/duomo.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Duomo, Milan">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">the magnificent duomo in milan - spent hours just staring at those details.</p>
+					</div>
+				</div>
+				
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/gamlastan.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Gamla Stan, Stockholm">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">gamla stan in stockholm - medieval vibes in the heart of a modern city.</p>
+					</div>
+				</div>
+				
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/interlaken.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Interlaken, Switzerland">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">interlaken's breathtaking alpine scenery - nature at its finest.</p>
+					</div>
+				</div>
+				
+				<div style="border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 8px 24px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';">
+					<img src="assets/img/misc/belgrad_forest_istanbul.jpg" style="width: 100%; height: 220px; object-fit: cover;" alt="Belgrad Forest, Istanbul">
+					<div style="padding: 0.8rem; background: white;">
+						<p style="margin: 0; font-size: 0.9rem;">the peaceful belgrad forest, just outside the chaos of istanbul.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Useful Stuff Section (moved to bottom) -->
+		<div class="misc-section">
+			<h3>useful stuff</h3>
+			<div class="cards-container">
+				<div class="card">
+					<div class="card-image" style="display: flex; align-items: center; justify-content: center; background-color: #f5f5f5;">
+						<i class="fas fa-graduation-cap" style="font-size: 5rem; color: #4a6741;"></i>
+					</div>
+					<div class="card-content">
+						<h4 class="card-title">graduation helper</h4>
+						<p class="card-description">
+							made this tool to keep track of my courses and check if i'm on track to graduate. select your courses and it'll tell you if you're good to go. saves your selections too.
+						</p>
+						<div class="card-tags">
+							<span class="card-tag">tool</span>
+							<span class="card-tag">university</span>
+							<span class="card-tag">planning</span>
+						</div>
+						<a href="http://serhanyilmaz.org/graduationHelper" target="_blank" rel="noopener noreferrer" class="card-link">try it out</a>
+					</div>
+				</div>
+
+				<div class="card">
+					<img src="https://developer.nvidia.com/sites/default/files/akamai/embedded/images/jetsonNano/JetsonNano-DevKit_Front-Top_Right_trimmed.jpg" class="card-image" alt="Jetson Nano">
+					<div class="card-content">
+						<h4 class="card-title">fixing jetson nano boot issues</h4>
+						<p class="card-description">
+							had to figure this out the hard way when my 2GB nano kept getting stuck at boot. sharing my notes in case anyone else runs into this.
+						</p>
+						<div class="card-tags">
+							<span class="card-tag">nvidia</span>
+							<span class="card-tag">jetson</span>
+							<span class="card-tag">fixes</span>
+						</div>
+						<a href="assets/jetson_fix.pdf" target="_blank" rel="noopener noreferrer" class="card-link">see fix</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<footer>
-		Made with &#10084;&#65039; in plain HTML and CSS, inspiration from <a href="https://github.com/rishabh-ranjan/rishabh-ranjan.github.io">rishabh ranjan</a>'s personal page. (<a href="https://github.com/serhanylmz/serhanylmz.github.io">this page on gh</a>).
-	<footer>
+		made with &#10084;&#65039; in plain html and css, inspiration from <a href="https://github.com/rishabh-ranjan/rishabh-ranjan.github.io" target="_blank" rel="noopener noreferrer">rishabh ranjan</a>'s personal page. (<a href="https://github.com/serhanylmz/serhanylmz.github.io">source code on gh</a>).
+	</footer>
 </body>
 
 </html>
