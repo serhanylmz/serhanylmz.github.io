@@ -1,10 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<title>Serhan Yilmaz</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<title>Serhan Yilmaz | Media</title>
+	<style>
+		/* Media page specific styles */
+		.media-container {
+			margin: 2rem 0;
+		}
+
+		.media-intro {
+			margin-bottom: 2rem;
+			padding: 1.5rem;
+			background-color: rgba(0, 128, 0, 0.05);
+			border-left: 3px solid green;
+			border-radius: 4px;
+		}
+
+		.media-intro h2 {
+			margin-top: 0;
+			margin-bottom: 0.5rem;
+		}
+
+		.media-intro p {
+			margin-bottom: 0;
+			font-size: 1.1rem;
+			line-height: 1.6;
+		}
+
+		.media-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+			gap: 2rem;
+		}
+
+		.media-card {
+			background-color: #fff;
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+			transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s ease;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			position: relative;
+			opacity: 0;
+			transform: translateY(20px);
+		}
+
+		.media-card:hover {
+			transform: translateY(-8px);
+			box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+		}
+
+		.media-card-image {
+			width: 100%;
+			height: 220px;
+			object-fit: cover;
+			border-bottom: 1px solid #eee;
+		}
+
+		.media-card-content {
+			padding: 1.5rem;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.media-card-title {
+			font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Cambria, Georgia, serif;
+			font-size: 1.4rem;
+			margin-top: 0;
+			margin-bottom: 0.8rem;
+			color: #000;
+			line-height: 1.3;
+		}
+
+		.media-card-description {
+			margin-bottom: 1.2rem;
+			color: #444;
+			line-height: 1.6;
+			flex-grow: 1;
+		}
+
+		.media-card-links {
+			display: flex;
+			gap: 0.8rem;
+			margin-top: auto;
+		}
+
+		.media-card-link {
+			display: inline-flex;
+			align-items: center;
+			padding: 0.5rem 1rem;
+			background-color: rgba(0, 128, 0, 0.08);
+			color: green;
+			border-radius: 20px;
+			font-size: 0.9rem;
+			transition: all 0.2s;
+		}
+
+		.media-card-link:hover {
+			background-color: rgba(0, 128, 0, 0.15);
+			transform: translateY(-2px);
+			border-bottom: none;
+		}
+
+		.media-card-link i {
+			margin-right: 0.5rem;
+		}
+
+		.media-card-date {
+			position: absolute;
+			top: 12px;
+			right: 12px;
+			background-color: rgba(0, 0, 0, 0.6);
+			color: white;
+			padding: 0.3rem 0.8rem;
+			border-radius: 20px;
+			font-size: 0.8rem;
+			backdrop-filter: blur(4px);
+		}
+
+		@media (max-width: 768px) {
+			.media-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -12,105 +139,252 @@
 
 	<h1><a href="index.html">Serhan Yilmaz</a></h1>
 
-	<h3>
-    <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">resume</a>
-    | <a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer">linkedin</a>
-    | <a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer">github</a>
-	| <a href="media.html">media</a>
-	| <a href="misc.html">misc</a>
-    | <a href="mailto:srhnylmz14@gmail.com">email</a>
-	</h3>
+	<nav class="nav-container">
+        <div class="nav-section external">
+            <span class="nav-label">Connect:</span>
+            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+            <a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+            <a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+            <a href="https://x.com/srhnylmz14" target="_blank" rel="noopener noreferrer" class="nav-link">X/Twitter</a>
+            <a href="mailto:srhnylmz14@gmail.com" class="nav-link">Email</a>
+        </div>
+        <div class="nav-section internal">
+            <span class="nav-label">Pages:</span>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="media.html" class="nav-link active">Media</a>
+            <a href="schedule.html" class="nav-link">Chat with Serhan</a>
+            <a href="misc.html" class="nav-link">Misc</a>
+        </div>
+    </nav>
 
-	<h2>media</h2>
-    <p>Here's a nice recollection of my past.</p>
+	<div class="media-container">
+		<div class="media-intro">
+			<h2>Media Highlights</h2>
+			<p>A visual journey through some memorable moments of my academic and professional life. From meeting industry leaders to receiving awards and participating in significant events.</p>
+		</div>
 
-    <ol>
+		<div class="media-grid">
+			<!-- Media Card 1: Jensen Huang -->
+			<div class="media-card">
+				<span class="media-card-date">January 2023</span>
+				<img class="media-card-image" src="assets/img/serhan-jensen.jpg" alt="Serhan with Jensen Huang" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">Meeting Jensen Huang</h3>
+					<p class="media-card-description">
+						I was invited to an AI conference in Stockholm by NVIDIA, where I had the incredible opportunity to meet Jensen Huang, the founder and CEO of NVIDIA.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/serhan-jensen.jpg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+						<a href="https://www.linkedin.com/posts/yilmaz-serhan_nvidia-ai-greencomputing-activity-7028026190049230848-TwoI" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fab fa-linkedin"></i> LinkedIn Post
+						</a>
+					</div>
+				</div>
+			</div>
 
-        <li>
-            <b>Me and Jensen Huang!</b><br>
-            I was invited to an AI conference in January 2023 in Stockholm by NVIDIA, where I got the chance to meet him.<br>
-        
-            <a href="assets\img\serhan-jensen.jpg" target="_blank" rel="noopener noreferrer">image</a>
-            | <a href="https://www.linkedin.com/posts/yilmaz-serhan_nvidia-ai-greencomputing-activity-7028026190049230848-TwoI" target="_blank" rel="noopener noreferrer">linkedin post</a>
-        </li>
-        
-        <li>
-            <b>kAi Wins 2 Awards!</b><br>
-            Our university awarded us with 2 awards for extraordinary achievement and contribution to internationalization, digitalization and technological development.<br>
-        
-            <a href="assets\img\kai_award.jpeg" target="_blank" rel="noopener noreferrer">image</a>
-            | <a href="https://www.linkedin.com/posts/yilmaz-serhan_kai-kaisabanci-cbddo-activity-7173399436637650944-MzXM" target="_blank" rel="noopener noreferrer">linkedin post</a>
-        </li>
-        
-        <li>
-            <b>kAi Team in Ankara</b><br>
-            We were invited to the Digital Transformation Office of the Presidency of Turkey to discuss AI policy in universities.<br>
-        
-            <a href="assets\img\kai_ankara.jpeg" target="_blank" rel="noopener noreferrer">image</a>
-            | <a href="https://www.linkedin.com/posts/yilmaz-serhan_kai-kaisabanci-cbddo-activity-7173399436637650944-MzXM" target="_blank" rel="noopener noreferrer">linkedin post</a>
-        </li>
-        
-        <li>
-            <b>A second award</b><br>
-            Upon being awarded by IVA (see below) I was awarded by the National Committee of Education in Siirt for my achievement.<br>
-        
-            <a href="assets\img\Serhan_mem_award.jpg" target="_blank" rel="noopener noreferrer">image</a>
-            | <a href="https://www.medyasiirt.com/egitim/isvec-kraliyet-ailesinden-odul-alan-serhan-yilmaza-bir-odulde-h16596.html" target="_blank" rel="noopener noreferrer">news article</a>
-        
-        </li>
-        
-        <li>
-            <b>Interview after award</b><br>
-            After the award by IVA (below), I was interviewed by national TV for my achievement.<br>
-        
-            <a href="assets\img\Serhan_iva_award.jpg" target="_blank" rel="noopener noreferrer">image</a>
-            | <a href="https://drive.google.com/file/d/14a_ZpeFKqvUkUH87W2GIJb2_bB6zFuVX/view?usp=share_link" target="_blank" rel="noopener noreferrer">interview</a>
-        
-        </li>
-        
-        <li>
-            <b>Award from Sweden</b><br>
-            Together with my team, our project "United in Crisis" was chosen for "Innovation in times of Crisis" award during the Covid-19 pandemic by the <b>Swedish Royal Academy of Engineering Sciences (IVA)</b>.<br>
-        
-            <a href="https://www.iva.se/publicerat/junior-academy-utmarkelsen-ung-innovation-i-kristid-till-sara-17-ar/#:~:text=Det%20%C3%A4r%20ett%20internationellt%20program,utvecklas%20inom%20probleml%C3%B6sning%20och%20innovation." target="_blank" rel="noopener noreferrer">news article - swedish</a>
-            | <a href="https://www.trthaber.com/haber/guncel/siirtli-ogrenci-isvec-kraliyet-muhendislik-bilimleri-akademisi-odulune-layik-goruldu-512336.html" target="_blank" rel="noopener noreferrer">news article - turkish</a>
-        
-        </li>
-        
-        <li>
-            <b>Earlier past: Presenting a project in Ankara</b><br>
-            I was presenting my work on efficient green energy production with solar panels in Ankara when I was in high school.<br>
-        
-            <a href="assets\img\ankara_kongre.jpg" target="_blank" rel="noopener noreferrer">image</a>
-            | <a href="http://www.siirtte.net/siirt-turk-telekom-fen-lisesi-ankarayi-fethetti/" target="_blank" rel="noopener noreferrer">news article</a>
-            | <a href="https://drive.google.com/file/d/1BwabCBcDDmS5G1cuolgtTvldTQVWnXhm/view" target="_blank" rel="noopener noreferrer">presentation - turkish</a>
-        
-        </li>
-        
-        <li>
-            <b>Earlier past: Founding a Robotics Club in the Middle East</b><br>
-            I've founded the Robotics club in my high school. Now where I'm from, this ain't so usual. We got interviewed by the national news agency after getting qualified for a FRC grant.<br>
-        
-            <a href="assets\img\robotic.png" target="_blank" rel="noopener noreferrer">image</a>
-            | <a href="https://www.ihavideo.com.tr/Video/Detay/1158992-siirtli-ogrenciler-tubitak-yarismalarina-hazirlaniyor" target="_blank" rel="noopener noreferrer">news article</a>
-            | <a href="https://drive.google.com/file/d/16tVwTrPsDegIT4zzsI_MzZLeGcNcI6Zy/view" target="_blank" rel="noopener noreferrer">interview - turkish</a>
-        
-        </li>
-        
-        <li>
-            <b>Earlier past: Robot avoiding obstacles</b><br>
-            High School, Built this thing in a half hour for a science fair. Simple as it is, folks were impressed.<br>
-        
-            <a href="assets\img\fuar_robot.jpg" target="_blank" rel="noopener noreferrer">full image</a>
-            | <a href="https://drive.google.com/file/d/1wmFG6bW8LdQhgHs45Pf3nDq4xS5f7UMf/view" target="_blank" rel="noopener noreferrer">demonstration - turkish</a>
-        
-        </li>
-        
-        </ol>
+			<!-- Media Card 2: kAi Awards -->
+			<div class="media-card">
+				<span class="media-card-date">2024</span>
+				<img class="media-card-image" src="assets/img/kai_award.jpeg" alt="kAi Award Ceremony" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">kAi Wins 2 Awards</h3>
+					<p class="media-card-description">
+						Our university awarded us with two prestigious awards for extraordinary achievement and contribution to internationalization, digitalization, and technological development.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/kai_award.jpeg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+						<a href="https://www.linkedin.com/posts/yilmaz-serhan_kai-kaisabanci-cbddo-activity-7173399436637650944-MzXM" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fab fa-linkedin"></i> LinkedIn Post
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 3: kAi in Ankara -->
+			<div class="media-card">
+				<span class="media-card-date">2024</span>
+				<img class="media-card-image" src="assets/img/kai_ankara.jpeg" alt="kAi Team in Ankara" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">kAi Team in Ankara</h3>
+					<p class="media-card-description">
+						We were invited to the Digital Transformation Office of the Presidency of Turkey to discuss AI policy in universities and share our experiences with kAi Sabanci.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/kai_ankara.jpeg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+						<a href="https://www.linkedin.com/posts/yilmaz-serhan_kai-kaisabanci-cbddo-activity-7173399436637650944-MzXM" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fab fa-linkedin"></i> LinkedIn Post
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 4: Simon See -->
+			<div class="media-card">
+				<span class="media-card-date">2023</span>
+				<img class="media-card-image" src="assets/img/serhan-simon.jpg" alt="Serhan with Simon See" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">Event with Simon See</h3>
+					<p class="media-card-description">
+						As kAi, we conducted an event with Simon See, the Global Head of NVIDIA AI. This photo was captured during our conversation about the future of AI and its applications.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/serhan-simon.jpg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 5: kAi Founding -->
+			<div class="media-card">
+				<span class="media-card-date">2023</span>
+				<img class="media-card-image" src="assets/img/kai-presentation.jpg" alt="kAi Founding Presentation" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">kAi Founding Presentation</h3>
+					<p class="media-card-description">
+						The first meeting of kAi when we founded it. I was pitching our vision to a room full of students, marking the beginning of what would become the university's premier AI club.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/kai-presentation.jpg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 6: National Committee Award -->
+			<div class="media-card">
+				<span class="media-card-date">2020</span>
+				<img class="media-card-image" src="assets/img/Serhan_mem_award.jpg" alt="National Committee Award" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">National Committee Award</h3>
+					<p class="media-card-description">
+						Following the IVA award, I was honored by the National Committee of Education in Siirt for my achievement, recognizing the international recognition brought to the region.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/Serhan_mem_award.jpg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+						<a href="https://www.medyasiirt.com/egitim/isvec-kraliyet-ailesinden-odul-alan-serhan-yilmaza-bir-odulde-h16596.html" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-newspaper"></i> News Article
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 7: Swedish Royal Academy Award (Merged with TV Interview) -->
+			<div class="media-card">
+				<span class="media-card-date">2020</span>
+				<img class="media-card-image" src="assets/img/Serhan_iva_award.jpg" alt="TV Interview" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">Swedish Royal Academy Award</h3>
+					<p class="media-card-description">
+						Our project "United in Crisis" was selected for the "Innovation in times of Crisis" award during the Covid-19 pandemic by the Swedish Royal Academy of Engineering Sciences (IVA). Following this recognition, I was interviewed by national television about the project and its impact.
+					</p>
+					<div class="media-card-links">
+						<a href="https://www.iva.se/publicerat/junior-academy-utmarkelsen-ung-innovation-i-kristid-till-sara-17-ar/#:~:text=Det%20%C3%A4r%20ett%20internationellt%20program,utvecklas%20inom%20probleml%C3%B6sning%20och%20innovation." target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-newspaper"></i> Swedish Article
+						</a>
+						<a href="https://www.trthaber.com/haber/guncel/siirtli-ogrenci-isvec-kraliyet-muhendislik-bilimleri-akademisi-odulune-layik-goruldu-512336.html" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-newspaper"></i> Turkish Article
+						</a>
+						<a href="https://drive.google.com/file/d/14a_ZpeFKqvUkUH87W2GIJb2_bB6zFuVX/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-video"></i> Watch Interview
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 9: Robotics Club -->
+			<div class="media-card">
+				<span class="media-card-date">2019</span>
+				<img class="media-card-image" src="assets/img/robotic.png" alt="Robotics Club" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">Founding a Robotics Club</h3>
+					<p class="media-card-description">
+						I founded the Robotics club in my high school in the Middle East. We were interviewed by the national news agency after qualifying for a FRC grant, a significant achievement for the region.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/robotic.png" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+						<a href="https://www.ihavideo.com.tr/Video/Detay/1158992-siirtli-ogrenciler-tubitak-yarismalarina-hazirlaniyor" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-newspaper"></i> News Article
+						</a>
+						<a href="https://drive.google.com/file/d/16tVwTrPsDegIT4zzsI_MzZLeGcNcI6Zy/view" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-video"></i> Watch Interview
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 10: Ankara Presentation -->
+			<div class="media-card">
+				<span class="media-card-date">2018</span>
+				<img class="media-card-image" src="assets/img/ankara_kongre.jpg" alt="Presenting in Ankara" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">Presenting in Ankara</h3>
+					<p class="media-card-description">
+						During high school, I presented my work on efficient green energy production with solar panels at a conference in Ankara, showcasing early research interests.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/ankara_kongre.jpg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+						<a href="http://www.siirtte.net/siirt-turk-telekom-fen-lisesi-ankarayi-fethetti/" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-newspaper"></i> News Article
+						</a>
+						<a href="https://drive.google.com/file/d/1BwabCBcDDmS5G1cuolgtTvldTQVWnXhm/view" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-file-powerpoint"></i> Presentation
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Media Card 11: Robot Avoiding Obstacles -->
+			<div class="media-card">
+				<span class="media-card-date">2017</span>
+				<img class="media-card-image" src="assets/img/fuar_robot.jpg" alt="Obstacle Avoiding Robot" onerror="this.src='https://via.placeholder.com/400x220?text=Image+Not+Found'">
+				<div class="media-card-content">
+					<h3 class="media-card-title">Robot Avoiding Obstacles</h3>
+					<p class="media-card-description">
+						During high school, I built this simple obstacle-avoiding robot in just half an hour for a science fair. Despite its simplicity, it impressed visitors and showcased my early interest in robotics.
+					</p>
+					<div class="media-card-links">
+						<a href="assets/img/fuar_robot.jpg" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-image"></i> View Image
+						</a>
+						<a href="https://drive.google.com/file/d/1wmFG6bW8LdQhgHs45Pf3nDq4xS5f7UMf/view" target="_blank" rel="noopener noreferrer" class="media-card-link">
+							<i class="fas fa-video"></i> Watch Demo
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<footer>
-		Made with &#10084;&#65039; in plain HTML and CSS, inspiration from <a href="https://github.com/rishabh-ranjan/rishabh-ranjan.github.io">rishabh ranjan</a>'s personal page. (<a href="https://github.com/serhanylmz/serhanylmz.github.io">this page on gh</a>).
-	<footer>
+		Made with &#10084;&#65039; in plain HTML and CSS, inspiration from <a href="https://github.com/rishabh-ranjan/rishabh-ranjan.github.io" target="_blank" rel="noopener noreferrer">rishabh ranjan</a>'s personal page. (<a href="https://github.com/serhanylmz/serhanylmz.github.io">this page on gh</a>).
+	</footer>
+
+	<script>
+		// Add a small animation effect when the page loads
+		document.addEventListener('DOMContentLoaded', function() {
+			const cards = document.querySelectorAll('.media-card');
+			cards.forEach((card, index) => {
+				setTimeout(() => {
+					card.style.opacity = '1';
+					card.style.transform = 'translateY(0)';
+				}, 100 * index);
+			});
+		});
+	</script>
 </body>
 
 </html>
