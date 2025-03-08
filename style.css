@@ -377,12 +377,16 @@ footer {
         align-items: center;
         text-align: center;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        min-height: 100vh;
+        height: 100%;
     }
     
     .nav-container.nav-open {
         transform: translateX(0);
         opacity: 1;
         pointer-events: all;
+        min-height: 100vh; /* Ensure minimum height covers the viewport when open */
+        height: 100%; /* Full height when open */
     }
     
     .nav-container.nav-open .nav-link.active {
@@ -512,6 +516,8 @@ footer {
         max-width: 100% !important;
         flex-direction: unset !important;
         flex-wrap: unset !important;
+        min-height: 100vh !important; /* Ensure minimum height covers the viewport */
+        height: 100% !important; /* Full height */
     }
     
     /* Force each section to be a block element */
