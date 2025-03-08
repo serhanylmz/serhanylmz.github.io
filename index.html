@@ -33,7 +33,7 @@
                 <span class="nav-label">Navigation</span>
                 <a href="index.html" class="nav-link active"><span>Home</span></a>
                 <a href="media.html" class="nav-link"><span>Media</span></a>
-                <a href="schedule.html" class="nav-link"><span>Chat</span></a>
+                <a href="schedule.html" class="nav-link"><span>Chat with Serhan</span></a>
                 <a href="misc.html" class="nav-link"><span>Misc</span></a>
             </div>
             
@@ -203,6 +203,15 @@
                         document.body.classList.remove('nav-is-open');
                     }
                 });
+            });
+
+            // Set active class based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage) {
+                    link.classList.add('active');
+                }
             });
 
             // Function to check window width and toggle visibility
