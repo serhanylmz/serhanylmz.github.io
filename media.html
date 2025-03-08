@@ -135,27 +135,36 @@
 </head>
 
 <body>
-	<img id="profile_pic" src="assets/img/profile.jpg" alt="Serhan Yilmaz">
+	<!-- Mobile menu toggle button -->
+	<button id="mobile-nav-toggle" aria-label="Toggle navigation menu">
+		<span class="hamburger-icon">
+			<span class="hamburger-line"></span>
+			<span class="hamburger-line"></span>
+			<span class="hamburger-line"></span>
+		</span>
+	</button>
 
 	<h1><a href="index.html">Serhan Yilmaz</a></h1>
 
-	<nav class="nav-container">
-        <div class="nav-section external">
-            <span class="nav-label">Connect:</span>
-            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
-            <a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
-            <a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
-            <a href="https://x.com/srhnylmz14" target="_blank" rel="noopener noreferrer" class="nav-link">X/Twitter</a>
-            <a href="mailto:srhnylmz14@gmail.com" class="nav-link">Email</a>
-        </div>
-        <div class="nav-section internal">
-            <span class="nav-label">Pages:</span>
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="media.html" class="nav-link active">Media</a>
-            <a href="schedule.html" class="nav-link">Chat with Serhan</a>
-            <a href="misc.html" class="nav-link">Misc</a>
-        </div>
-    </nav>
+	<div class="mobile-nav-container">
+		<nav class="nav-container" id="main-nav">
+			<div class="nav-section external">
+				<span class="nav-label">Connect:</span>
+				<a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="nav-link">Resume</a>
+				<a href="https://www.linkedin.com/in/yilmaz-serhan/" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a>
+				<a href="https://github.com/serhanylmz" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a>
+				<a href="https://x.com/srhnylmz14" target="_blank" rel="noopener noreferrer" class="nav-link">X/Twitter</a>
+				<a href="mailto:srhnylmz14@gmail.com" class="nav-link">Email</a>
+			</div>
+			<div class="nav-section internal">
+				<span class="nav-label">Pages:</span>
+				<a href="index.html" class="nav-link">Home</a>
+				<a href="media.html" class="nav-link active">Media</a>
+				<a href="schedule.html" class="nav-link">Chat with Serhan</a>
+				<a href="misc.html" class="nav-link">Misc</a>
+			</div>
+		</nav>
+	</div>
 
 	<div class="media-container">
 		<div class="media-intro">
@@ -370,7 +379,7 @@
 	</div>
 
 	<footer>
-		Made with &#10084;&#65039; in plain HTML and CSS, inspiration from <a href="https://github.com/rishabh-ranjan/rishabh-ranjan.github.io" target="_blank" rel="noopener noreferrer">rishabh ranjan</a>'s personal page. (<a href="https://github.com/serhanylmz/serhanylmz.github.io">this page on gh</a>).
+		Made with &#10084;&#65039; in plain HTML and CSS, inspiration from <a href="https://github.com/rishabh-ranjan/rishabh-ranjan.github.io" target="_blank" rel="noopener noreferrer">rishabh ranjan</a>'s personal page. (<a href="https://github.com/serhanylmz/serhanylmz.github.io">source code on gh</a>).
 	</footer>
 
 	<script>
@@ -383,6 +392,46 @@
 					card.style.transform = 'translateY(0)';
 				}, 100 * index);
 			});
+		});
+
+		document.addEventListener('DOMContentLoaded', function() {
+			const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+			const mainNav = document.getElementById('main-nav');
+			
+			// Toggle menu open/close
+			mobileNavToggle.addEventListener('click', function() {
+				mainNav.classList.toggle('nav-open');
+				mobileNavToggle.classList.toggle('is-active');
+				document.body.classList.toggle('nav-is-open');
+			});
+			
+			// Close menu when clicking on a link (for mobile)
+			const navLinks = document.querySelectorAll('.nav-link');
+			navLinks.forEach(link => {
+				link.addEventListener('click', function() {
+					if (window.innerWidth <= 768) {
+						mainNav.classList.remove('nav-open');
+						mobileNavToggle.classList.remove('is-active');
+						document.body.classList.remove('nav-is-open');
+					}
+				});
+			});
+
+			// Function to check window width and toggle visibility
+			function checkWindowSize() {
+				if (window.innerWidth <= 768) {
+					mainNav.classList.remove('nav-open');
+					mobileNavToggle.style.display = 'flex';
+				} else {
+					mobileNavToggle.style.display = 'none';
+				}
+			}
+
+			// Run on page load
+			checkWindowSize();
+			
+			// Run when window is resized
+			window.addEventListener('resize', checkWindowSize);
 		});
 	</script>
 </body>
